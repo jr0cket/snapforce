@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Camera from 'react-native-snap-camera';
+
 
 export default class App extends React.Component {
   render() {
@@ -8,6 +10,7 @@ export default class App extends React.Component {
               <View style={styles.header}>
                 <Text style={styles.title}>SnapForce</Text>
             </View>
+            <Camera type="back" />
             </View>
     );
   }
