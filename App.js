@@ -37,11 +37,11 @@ export default class App extends React.Component {
               😀
         </Text>
             <Text style={styles.button} onPress={this.toggleCamera.bind(this)}>
-            { this.state.cameraType === 'front' ? '📷' : '( ͡° ͜ʖ ͡°)' }
         </Text>
             <Text style={styles.button} onPress={this.toggleTextInput.bind(this)}>
             ✏️
         </Text>
+            { this.state.cameraType === 'front' ? '📷' : '🐼' }
             </View>
             <SnapEmoji isVisible={this.state.showEmojiPicker}>
             <SnapText isVisible={this.state.showTextInput}>
@@ -69,6 +69,10 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: 'white'
     },
+    buttons: {
+        flexDirection: 'row'
+    },
+
     button: {
         fontSize: 25,
         color: 'white',
