@@ -1,9 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import Camera from 'react-native-snap-camera';
 import SnapEmoji from 'react-native-snap-emoji';
-
-
 import SnapText from 'react-native-snap-text';
 
 
@@ -61,7 +59,11 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff'
   },
     header:{
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
+        marginTop: Platform.select({
+            ios: 0,
+            android: 24
+        })
     },
     title: {
         fontSize: 30,
