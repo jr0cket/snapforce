@@ -10,13 +10,18 @@ export default class App extends React.Component {
 
     // Component state
     state = {
-        showEmojiPicker: false
+        showEmojiPicker: false,
+        cameraType: 'simulate'
     }
 
     // Toggle between showing and hiding emoji picker
     toggleEmojiPicker() {
         this.setState({ showEmojiPicker: !this.state.showEmojiPicker });
-}
+    }
+
+    toggleCamera() {
+        this.setState({ cameraType: this.state.cameraType === 'front' ? 'simulate' : 'front' });
+    }
 
     render() {
     return (
@@ -25,10 +30,13 @@ export default class App extends React.Component {
             <Text style={styles.title}>SnapForce</Text>
             <Text style={styles.button} onPress={this.toggleEmojiPicker.bind(this)}>
               😀
-            </Text>
+        </Text>
+            <Text style={styles.button} onPress={this.toggleCamera.bind(this)}>
+            { this.state.cameraType === 'front' ? '📷' : '( ͡° ͜ʖ ͡°)' }
+        </Text>
             </View>
             <SnapEmoji isVisible={this.state.showEmojiPicker}>
-              <Camera type="back" />
+            <Camera type={this.state.cameraType} />
             </SnapEmoji>
             </View>
     );
