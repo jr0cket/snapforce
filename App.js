@@ -32,22 +32,24 @@ export default class App extends React.Component {
     return (
             <View style={styles.container}>
               <View style={styles.header}>
-            <Text style={styles.title}>SnapForce</Text>
-            <Text style={styles.button} onPress={this.toggleEmojiPicker.bind(this)}>
-              😀
-        </Text>
-            <Text style={styles.button} onPress={this.toggleCamera.bind(this)}>
-        </Text>
-            <Text style={styles.button} onPress={this.toggleTextInput.bind(this)}>
-            ✏️
-        </Text>
+                <Text style={styles.title}>SnapForce</Text>
+              <View style={styles.buttons}>
+                <Text style={styles.button} onPress={this.toggleEmojiPicker.bind(this)}>
+                  😀
+                </Text>
+                <Text style={styles.button} onPress={this.toggleCamera.bind(this)}>
             { this.state.cameraType === 'front' ? '📷' : '🐼' }
+                </Text>
+                <Text style={styles.button} onPress={this.toggleTextInput.bind(this)}>
+                  ✏️
+                </Text>
+              </View>
             </View>
-            <SnapEmoji isVisible={this.state.showEmojiPicker}>
-            <SnapText isVisible={this.state.showTextInput}>
-            <Camera type={this.state.cameraType} />
-            </SnapText>
-            </SnapEmoji>
+                <SnapEmoji isVisible={this.state.showEmojiPicker}>
+                  <SnapText isVisible={this.state.showTextInput}>
+                    <Camera type={this.state.cameraType} />
+                  </SnapText>
+                </SnapEmoji>
             </View>
     );
   }
