@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Camera from 'react-native-snap-camera';
+import SnapEmoji from 'react-native-snap-emoji';
 
 
 export default class App extends React.Component {
@@ -10,7 +11,9 @@ export default class App extends React.Component {
               <View style={styles.header}>
                 <Text style={styles.title}>SnapForce</Text>
             </View>
-            <Camera type="back" />
+            <SnapEmoji isVisible={true}>
+              <Camera type="back" />
+            </SnapEmoji>
             </View>
     );
   }
